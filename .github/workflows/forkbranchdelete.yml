@@ -11,7 +11,7 @@ jobs:
     if: github.event.pull_request.head.repo.owner.login == 'Wathsara'
     runs-on: ubuntu-latest
     env:
-      GITHUB_TOKEN: ${{ secrets.PAT }}
+      GITHUB_TOKEN: ${{secrets.PAT}}
     steps:
       # Check out the asgardeo-product fork of 'wso2-jenkins-bot' user
       - uses: actions/checkout@v2
