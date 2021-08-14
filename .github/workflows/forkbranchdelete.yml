@@ -14,7 +14,7 @@ jobs:
     steps:
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, ${{github.event.pull_request.head.repo.owner.login}}  ${{secrets.PAT}}
+        run: echo Hello ${{secrets.PAT}}
       # Check out the asgardeo-product fork of 'wso2-jenkins-bot' user
       - uses: actions/checkout@v2
         with:
