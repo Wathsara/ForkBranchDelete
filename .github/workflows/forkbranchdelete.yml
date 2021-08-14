@@ -1,9 +1,11 @@
 # This workflow will delete the respective fork branch when a PR authored by 'jenkins-is-staging' is merged/closed.
 name: Fork Branch Deleter
 
+# only trigger on pull request closed events
 on:
   pull_request:
     types: [ closed ]
+  workflow_dispatch:
 
 jobs:
   build:
