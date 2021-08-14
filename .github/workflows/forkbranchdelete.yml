@@ -17,12 +17,10 @@ jobs:
         run: echo Hello, ${{github.event.pull_request.head.repo.owner.login}}  ${{secrets.PAT}}
       # Check out the asgardeo-product fork of 'wso2-jenkins-bot' user
       - uses: actions/checkout@v2
-        if: ${{github.event.pull_request.head.repo.owner.login == 'Wathsara'}}
         with:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           fetch-depth: 0
           token: ${{secrets.PAT}}
 
       - name: Delete Fork Branch of wso2-jenkins-bot
-        if: ${{github.event.pull_request.head.repo.owner.login == 'Wathsara'}}
         run: git push -d origin ${{ github.event.pull_request.head.ref }}
