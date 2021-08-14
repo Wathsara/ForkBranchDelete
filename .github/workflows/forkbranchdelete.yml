@@ -10,9 +10,11 @@ jobs:
     # Check whether the PR was authored by 'wso2-jenkins-bot'
     if: github.event.pull_request.head.repo.owner.login == 'Wathsara'
     runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{secrets.PAT}}
+
     steps:
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, ${{secrets.PAT}}
       # Check out the asgardeo-product fork of 'wso2-jenkins-bot' user
       - uses: actions/checkout@v2
         with:
