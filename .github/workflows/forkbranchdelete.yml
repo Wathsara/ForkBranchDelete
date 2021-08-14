@@ -9,8 +9,6 @@ on:
 
 jobs:
   build:
-    # Check whether the PR was authored by 'wso2-jenkins-bot'
-    if: github.event.pull_request.head.repo.owner.login == 'Wathsara'
     runs-on: ubuntu-latest
 
     steps:
